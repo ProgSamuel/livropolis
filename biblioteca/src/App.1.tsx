@@ -1,10 +1,9 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import Book from './assets/model/Book';
 import { format } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import { FormStyled } from './assets/components/form';
 import { CardBook } from './assets/components/cardBook';
-
 
 export function App() {
   const [books, setBooks] = useState<Book[]>([]);
@@ -14,11 +13,11 @@ export function App() {
   const [publication, setPublication] = useState(new Date());
   const [description, setDescription] = useState('');
 
-  function newBook(event:any) {
+  function newBook(event: any) {
     event.preventDefault();
     if (!title || !author || !genre || !publication || !description) return;
     const addBook: Book = {
-      id: Date.now().toString(),
+      id: Date.now(),
       title,
       author,
       publication,
@@ -30,10 +29,25 @@ export function App() {
   }
 
   function formatDate(date: Date) {
-    return format(date, "dd MMMM yyyy", { locale: enUS }); 
+    return format(date, 'dd MMMM yyyy', { locale: enUS });
   }
-  
 
+  function resetBook(){
+    setTitle('')
+    setAuthor('')
+    setGenre('')
+    setPublication(new Date())
+    setDescription('')
+  }
+
+  function updateBook(){
+
+  }
+
+  function deleteBook(id:number) {
+    const updatedBooks = books.filter(book => book.id !== id);
+    setBooks([...updatedBooks]);
+  }
 
 
   return (
@@ -69,14 +83,10 @@ export function App() {
           required
         />
 
-        <label>Register Date:</label>
-        <input
-          value={formatDate(new Date())}
-          type="text"
-          disabled
-        />
+        <label>Registered in:</label>
+        <input value={formatDate(new Date())} type="text" disabled />
 
-        <label htmlFor="publication">Publication Date:</label>
+        <label htmlFor="publication">Publication date</label>
         <input
           value={publication.toISOString().split('T')[0]}
           onChange={(e) => setPublication(new Date(e.target.value))}
@@ -95,6 +105,7 @@ export function App() {
         />
 
         <input type="submit" onClick={newBook} />
+        <input type="reset" onClick={resetBook} />
       </form>
 
       <div>
@@ -102,12 +113,15 @@ export function App() {
           <CardBook key={book.id}>
             <ul>
               <li>{book.title}</li>
+              <li> {book.id}</li>
               <li>{book.author}</li>
               <li>{book.genre}</li>
               <li>{formatDate(book.publication)}</li>
               <li>{book.register.toString()}</li>
               <li>{book.description}</li>
             </ul>
+            <button onClick={updateBook}> Edit</button>
+            <button onClick={() => deleteBook(book.id)}> Delete </button>
           </CardBook>
         ))}
       </div>

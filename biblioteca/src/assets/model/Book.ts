@@ -1,6 +1,6 @@
 
 export default interface Book {
-    id: string
+    id: number
     title: string
     author: string
     publication:Date

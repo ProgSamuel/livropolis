@@ -5,6 +5,7 @@ export const FormStyled = styled.div`
 
 form{
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    gap: 1em;
 }
   `;
