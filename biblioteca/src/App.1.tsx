@@ -14,7 +14,8 @@ export function App() {
   const [publication, setPublication] = useState(new Date());
   const [description, setDescription] = useState('');
 
-  function newBook() {
+  function newBook(event:any) {
+    event.preventDefault();
     if (!title || !author || !genre || !publication || !description) return;
     const addBook: Book = {
       id: Date.now().toString(),
@@ -92,8 +93,6 @@ export function App() {
           placeholder="Description"
           required
         />
-
-        <input type="text"  placeholder='qualquer'/>
 
         <input type="submit" onClick={newBook} />
       </form>
