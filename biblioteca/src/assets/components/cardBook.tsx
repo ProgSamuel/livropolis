@@ -1,32 +1,35 @@
 import styled from 'styled-components';
 
-
 export const CardBook = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1em;
-    li {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      padding: .5em;
-      border-right: 1px solid black;
-      gap: 5px;
- 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
 
-    }
-    
-    button{
-      width: fit-content;
-      height: fit-content;
-    }
-    ul {
-      border: 1px solid gray;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
-  `;
+  li {
+    list-style: none;
+    display: flex;
+    padding: 0em 1em;
+    justify-content: space-around;
+    gap: 5px;
+    width: 8em;
+  }
+
+  button {
+    width: 8em;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    flex-wrap: wrap;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 1.5em;
+    border-radius: 5px;
+    gap: 5px;
+
+    background-color: #a9a9a9;
+  }
+`;

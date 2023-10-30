@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
 body {
   margin: auto;
   display: flex;
@@ -5,6 +6,126 @@ body {
   align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: url(../public/images/grande-colecao-de-livros-antigos-em-prateleiras-de-madeira-geradas-por-ia.jpg)
+    no-repeat center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
 }
 
+h1 {
+  width: 100%;
+  font-size: 2em;
+  text-align: center;
+}
 
+.library {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+
+  height: 100vh;
+  align-items: center;
+}
+
+:first-child section {
+  height: 100vh;
+  align-items: center;
+}
+.edit {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.custom-modal > ul {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 3em 6em;
+  border-radius: 20px;
+  background-color: #d3d3d3;
+}
+.custom-modal > ul > div {
+  display: flex;
+  gap: 1em;
+  margin-top: 2em;
+}
+.custom-modal > ul > li {
+  width: 100%;
+  margin: 0;
+  list-style: none;
+  font-size: 1.3em;
+  display: flex;
+  justify-content: space-between;
+}
+.custom-modal > ul > li > span {
+  font-weight: bold;
+}
+.custom-modal {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(../public/images/grande-colecao-de-livros-antigos-em-prateleiras-de-madeira-geradas-por-ia.jpg)
+    no-repeat center fixed;
+  background-size: cover;
+  margin: auto;
+  gap: 0.5em;
+}
+
+.custom-modal > button {
+  width: 40%;
+}
+
+#update,
+#update2,
+#submit {
+  background-color: #8ebc8e;
+  border: none;
+}
+
+#cancel,
+#cancel2,
+#seeMore {
+  background-color: #ffb366;
+  border: none;
+}
+
+#delete,
+#reset {
+  background-color: #d1867b;
+  border: none;
+}
+
+.custom-modal > form {
+  background-color: #e0e0e0;
+  width: 30%;
+  height: fit-content;
+  padding: 3em 1.5em;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.custom-modal > form > label {
+  font-weight: 600;
+}
+
+.custom-modal > form > input,
+select {
+  background-color: #a9a9a9;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 3px;
+}
