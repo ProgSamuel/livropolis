@@ -9,17 +9,6 @@ export const CardBook = styled.div`
   position: relative;
   backdrop-filter: blur(109px);
 
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -9;
-  }
-
   li {
     list-style: none;
     display: flex;
@@ -31,7 +20,6 @@ export const CardBook = styled.div`
 
   button {
     width: 8em;
-    border-radius: 8px;
     padding: 0.5em 1em;
     flex-wrap: wrap;
   }
@@ -40,10 +28,9 @@ export const CardBook = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.5em 1.5em;
-    border-radius: 5px;
     gap: 5px;
     background-color: #a9a9a9;
+    background-color:transparent;
     
   }
 `;
